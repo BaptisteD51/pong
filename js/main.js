@@ -17,8 +17,8 @@ let direction = {
 };
 
 let velocity = {
-    x: 1.5,
-    y: 1.5
+    x: 2,
+    y: 2
 };
 
 const anim = () => {
@@ -35,9 +35,10 @@ const anim = () => {
         };
     }
 
-    if ( ( ((ballPos.x) < 10) || (ballPos.x>630) )   && ( (ballPos.y < playerY + 80) && (ballPos.y > playerY) ) ){
-        //direction.y = direction.y * -1
-        direction.x = direction.x * -1
+    if ( ballPos.x < 25 || ballPos.x>620 ){
+        if (ballPos.y < playerY + 80 && ballPos.y > playerY ) {
+            direction.x = direction.x * -1
+        }
     }
     
     ballPos.x += velocity.x * direction.x;
