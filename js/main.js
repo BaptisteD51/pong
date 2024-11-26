@@ -29,7 +29,10 @@ const anim = () => {
     }
 
     if( ( ballPos.x > canvas.width ) || ( ballPos.x < 0 )){
-        return
+        ballPos = {
+            x: 320,
+            y: 240
+        };
     }
 
     if ( ( ((ballPos.x) < 10) || (ballPos.x>630) )   && ( (ballPos.y < playerY + 80) && (ballPos.y > playerY) ) ){
